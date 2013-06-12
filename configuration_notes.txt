@@ -23,7 +23,7 @@ On heroku:
   http://immense-sands-1258.herokuapp.com/ | git@heroku.com:immense-sands-1258.git
   use
       git push heroku master
-
+  http://tarasrsvp.herokuapp.com/
 
 On github:
     https://github.com/tartartartartar/taras_rsvp.git

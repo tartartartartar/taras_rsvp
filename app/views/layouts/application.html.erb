@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FirstApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag("application", { :media => "all" } ) %>
+    
+    
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+
+    <header>
+      <div class="container">
+	<ul class="nav pull-right">
+	  <li><%= link_to("Home", root_path) %></li>
+	  <li><%= link_to("RSVP Form", rsvp_path) %></li>
+	  <li><%= link_to("Contact", contact_path) %></li>
+	</ul>
+      </div>
+    </header>
+
+
+
 
 <%= yield %>
 
-</body>
+
+    <%= debug(params) if Rails.env.development? %>
+
+    <footer>
+      <p class="small">All materials &copy; 2013 Kowaliw & Leclerc. The opinions expressed on this website are the opinions of absolutely no one. No one takes responsibility for them. If anything bad happens to you while or after reading this information, it just plan sucks to be you. By having read the above website, you have agreed to sign over all rights to all information you have ever seen directly to Kowaliw &amp; Leclerc. To signal your agreement with these terms, please take a breath. So there. If you invent something cool tomorrow, it belongs to us. Sorry. </p>
+    </footer>
+  </body>
 </html>

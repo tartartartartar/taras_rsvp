@@ -1,0 +1,61 @@
+<% provide(:title, 'Home') %>
+
+<h1>Hello!</h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<hr />
+
+
+<div id="wrapper" style="overflow: hidden; ">
+
+	<div id="post_comments">
+	  <h2>Post a public comment:</h2>
+
+	  <% if @comment && @comment.errors.any? %>
+	    <div class="flash-error">
+	      The form contains <%= pluralize(@comment.errors.count, "error") %>.
+	      <ul>
+	        <% @comment.errors.full_messages.each do |msg| %>
+	        <li>* <%= msg %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <%= form_for((@comment || Comment.new)) do |f| %>
+	    <div class="field">
+	      <%= f.text_area :content, placeholder: "Compose your message... / Composez votre message...", rows: 5, cols: 30 %>
+	    </div>
+	    <div class="field">
+	      <%= f.text_field :name, placeholder: "Your name / Votre nom..."%>
+	    </div>
+	    <div class="field">
+	      <%= f.text_field(:email, placeholder: "Your email / Votre email...")%> (optional)
+	    </div>
+	    <div><%= f.submit("Post")%></div>
+	  <% end %>
+	</div>
+
+
+
+
+	<div id="public_comments">
+	<% if @comments && @comments.any? %>	 
+	  <h2>Comments (<%= @comments.size %> of <%= Comment.all.size %>):</h2>
+	  <%= render @comments %>
+	  
+	  <div class="pagination">
+	    <%= page_entries_info @comments %>
+	    <ul class="pagination"><%= will_paginate @comments, :container => false %></ul>
+	  </div>
+	  </p>
+	<% else %>
+	  <h2>Comments</h2>
+	  <p>There are none. Why not add one?</p>
+	<% end %>
+	</div>
+
+</div>
+
+
+

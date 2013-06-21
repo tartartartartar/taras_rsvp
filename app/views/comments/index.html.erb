@@ -1,0 +1,29 @@
+<% provide(:title, 'Admin Index') %>
+
+<h1>Admin index.</h1>
+
+
+	<% if @comments && @comments.any? %>	 
+	  <h2>Comments (<%= @comments.size %> of <%= Comment.all.size %>):</h2>
+	  <% @comments.each do |comment| %>
+        <div class="comment">
+		  <span class="content">
+		    <%= comment.content %>
+		  </span>
+		  <span class="sig">
+		    posted <%= time_ago_in_words(comment.created_at) %> ago by <b class="name"><%= comment.name %> (id: <%= comment.id%>)</b>
+		  </span>
+		  <%= button_to "delete #{comment.id}", comment_path(comment),
+		  				method: :delete %>
+		              <!--{ 
+		              	  :comment => comment,
+                          :confirm => "are you sure?",
+                          :method => :delete
+                      } -->
+          
+		</div>
+	  <% end %>
+
+	<% else %>
+	  <h2>No Comments</h2>
+	<% end %>

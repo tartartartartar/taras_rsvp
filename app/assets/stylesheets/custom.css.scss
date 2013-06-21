@@ -1,0 +1,150 @@
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding: 10px;
+  font-family: helvetica, sans-serif;
+  font-size: 11pt;
+  color: #111122;
+  background-color: #f5f5ff;
+}
+
+section {
+  overflow: auto;
+}
+
+header {
+  text-align: right;
+  border-bottom: 5px solid #333366;
+  padding: 5px;
+  background-color: #e5e5f5;
+}
+
+header ul {
+  list-style-type: none; 
+  text-align: right; 
+  margin: 0px;
+  padding: 5px;
+}
+
+header ul li {  
+  display: inline; 
+  padding: 5px; 
+} 
+
+a { 
+  text-decoration: none; 
+  padding: 2px; 
+  color: #333366; 
+  background-color: #ddddff; 
+  text-weight: bold;
+  font-size: 12pt;
+} 
+
+a:hover { 
+  text-decoration: none; 
+  padding: 2px; 
+  color: #ddddff; 
+  background-color: #333366; 
+  font-size: 12pt;
+} 
+
+footer {
+  border-top: 5px solid #333366;
+  padding: 5px;
+  background-color: #e5e5f5;
+}
+
+.small {
+  font-size: 8pt;
+  color: #a5a5b5;
+  margin: 5px;
+  font-style: italic;
+}
+
+p {
+  padding: 5px;
+  padding-left: 15px;
+}
+
+h1 {
+  padding: 5px;
+  padding-bottom: 0px;
+}
+
+span.content {
+  display: block;
+  margin-bottom: 10px;
+}
+span.sig {
+  display: block;
+  text-align: right;
+  font-size: 9pt;
+  font-style: italic;
+  color: #a5a5b5;
+}
+b.name {
+  display: inline;
+  text-align: right;
+  font-size: 10pt;
+  font-style: italic;
+  color: #656585;
+}
+div.comment {
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-left: 15px;
+  background-color: #e5e5f5; 
+}
+
+
+div.flash-success {
+   color: #66aa66;
+   background-color: #a5e5a5;
+   padding: 10px;
+   margin-bottom: 10px;
+}
+div.flash-error {
+   color: #993333;
+   background-color: #ffd5d5;
+   padding: 10px;
+   margin-bottom: 10px;
+}
+
+
+#public_comments {
+  margin: 5px;
+  float: left;
+  overflow: hidden;
+  width: 600px;
+}
+
+#post_comments {
+  width: 300px; 
+  margin: 5px;
+  float: left;
+}
+
+div.pagination {
+  text-align: center;
+}
+
+ul.pagination {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none; 
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+
+
+
+
+
+

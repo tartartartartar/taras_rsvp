@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     #@comments = Comment.all
     @comment = Comment.new(params[:comment])
     if (@comment.save)
+      flash[:success] = "Comment added."
       redirect_to root_url
     else
       @comments = Comment.paginate(:page => params[:page], 
@@ -14,10 +15,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    raise params.inspect
+    #raise params.inspect
     Comment.find(params[:id]).destroy
     flash[:success] = "comment destroyed."
-    redirect_to index_url
+    redirect_to comments_url
   end
 
   def index

@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'rails-api'
+#gem 'rails-api'
 gem 'active_model_serializers'
 
 gem 'activerecord-jdbcpostgresql-adapter', '~>1.3.0.beta2'
 gem 'puma'
 
 
-gem 'activerecord-jdbcpostgresql-adapter', '~>1.3.0.beta2'
+#gem 'activerecord-jdbcpostgresql-adapter', '~>1.3.0.beta2'
 #gem 'puma'
 
 group :test do

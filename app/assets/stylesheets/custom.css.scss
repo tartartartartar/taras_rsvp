@@ -36,19 +36,16 @@ header ul li {
 
 a { 
   text-decoration: none; 
-  padding: 2px; 
+  padding: 1px; 
   color: #333366; 
   background-color: #ddddff; 
-  text-weight: bold;
-  font-size: 12pt;
 } 
 
 a:hover { 
   text-decoration: none; 
-  padding: 2px; 
+  padding: 1px; 
   color: #ddddff; 
   background-color: #333366; 
-  font-size: 12pt;
 } 
 
 footer {
@@ -65,12 +62,12 @@ footer {
 }
 
 p {
-  padding: 5px;
+  padding: 2px;
   padding-left: 15px;
 }
 
 h1 {
-  padding: 5px;
+  padding: 2px;
   padding-bottom: 0px;
 }
 
@@ -102,13 +99,13 @@ div.comment {
 
 
 div.flash-success {
-   color: #66aa66;
+   color: #116611;
    background-color: #a5e5a5;
    padding: 10px;
    margin-bottom: 10px;
 }
 div.flash-error {
-   color: #993333;
+   color: #661111;
    background-color: #ffd5d5;
    padding: 10px;
    margin-bottom: 10px;

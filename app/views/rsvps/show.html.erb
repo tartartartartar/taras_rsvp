@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @rsvp.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @rsvp.email %>
+</p>
+
+<p>
+  <b>Num persons:</b>
+  <%= @rsvp.num_persons %>
+</p>
+
+<p>
+  <b>Special:</b>
+  <%= @rsvp.special %>
+</p>
+
+<p>
+  <b>Will attend:</b>
+  <%= @rsvp.will_attend %>
+</p>
+
+
+<%= link_to 'Edit', edit_rsvp_path(@rsvp) %> |
+<%= link_to 'Back', rsvps_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620195619) do
+ActiveRecord::Schema.define(:version => 20130621185645) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20130620195619) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "rsvps", :force => true do |t|
+    t.text     "name"
+    t.string   "email"
+    t.integer  "num_persons"
+    t.text     "special"
+    t.boolean  "will_attend"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

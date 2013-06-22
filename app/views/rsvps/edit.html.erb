@@ -1,0 +1,42 @@
+<h1>Editing rsvp</h1>
+
+
+<%= form_for(@rsvp) do |f| %>
+  <% if @rsvp.errors.any? %>
+	<div class="flash-error">
+	  The form contains <%= pluralize(@rsvp.errors.count, "error") %>.
+      <ul>
+      <% @rsvp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Noms / Names: "  %>
+    <%= f.text_field :name, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Email: " %>
+    <%= f.text_field :email, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :will_attend, "Allez attendre? / Will attend?" %>
+    <%= f.check_box :will_attend %>
+  </div>
+  <div class="field">
+    <%= f.label :num_persons, "Nombres des persons / number of guests:" %>
+    <%= f.number_field :num_persons, size: 10 %>
+  </div>
+  <div class="field">
+    <%= f.label :special, "Requets specials / special requests:" %><br />
+    <%= f.text_area :special, rows: 3, cols: 100 %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Tiguidou! / Okeydokey!" %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @rsvp %> |
+<%= link_to 'Back', rsvps_path %>

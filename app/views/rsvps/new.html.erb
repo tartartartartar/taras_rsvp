@@ -1,0 +1,51 @@
+<h1>RSVP</h1>
+
+<p>
+  Please fill out the RSVP form below:
+</p>
+
+<div style="margin-left: 15px;">
+<%= form_for(@rsvp) do |f| %>
+  <% if @rsvp.errors.any? %>
+	<div class="flash-error">
+	  The form contains <%= pluralize(@rsvp.errors.count, "error") %>.
+      <ul>
+      <% @rsvp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Noms / Names: "  %>
+    <%= f.text_field :name, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Email: " %>
+    <%= f.text_field :email, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :will_attend, "Allez venir? / Will attend?" %>
+    <%= f.select(:will_attend, 
+        options_for_select(
+          [["select",""], ["OUI, nous allons venir / YES, we will attend",1], ["NON, nous n'allons pas venir / NO, we will not attend",0]]
+        )) %>
+  </div>
+  <div class="field">
+    <%= f.label :num_persons, "Nombres des persons / number of guests:" %>
+    <%= f.number_field :num_persons, size: 10 %>
+  </div>
+  <div class="field">
+    <%= f.label :special, "Requets specials / special requests:" %><br />
+    <%= f.text_area :special, rows: 3, cols: 100 %>
+  </div>
+  <div class="actions">
+    <%= f.submit  "Submit",
+        :confirm => "Submit RSVP?"
+    %>
+  </div>
+<% end %>
+</div>
+
+<br /><br />
